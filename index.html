@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="calendarApp">
+<head>
+    <title>AngularJS Calendar</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body ng-controller="CalendarController">
+
+    <div class="calendar">
+        <div class="header">
+            <button ng-click="prevMonth()">&lt;</button>
+            <span>{{ monthNames[currentMonth] }} {{ currentYear }}</span>
+            <button ng-click="nextMonth()">&gt;</button>
+        </div>
+        <div class="weekdays">
+            <div ng-repeat="day in weekdays">{{ day }}</div>
+        </div>
+        <div class="days">
+            <div ng-repeat="day in days" class="day" ng-class="{'other-month': !day.isCurrentMonth}">
+                {{ day.date.getDate() }}
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

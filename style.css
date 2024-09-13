@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #e6f7ff;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.calendar {
+    background-color: #ffffff;
+    border: 2px solid #007acc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 320px;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.calendar:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #007acc;
+    border-bottom: 2px solid #005bb5;
+    color: #ffffff;
+    border-radius: 10px 10px 0 0;
+}
+
+.header button {
+    background-color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    color: #007acc;
+    font-size: 16px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.header button:hover {
+    background-color: #e6f7ff;
+}
+
+.header span {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.weekdays, .days {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.weekdays div, .days div {
+    width: 14.28%;
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.weekdays div {
+    background-color: #005bb5;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.days div:hover {
+    background-color: #e6f7ff;
+    cursor: pointer;
+}
+
+.other-month {
+    color: #cccccc;
+}
+
+.current-day {
+    background-color: #007acc;
+    color: #ffffff;
+    border-radius: 50%;
+}
+
+.days div.current-day:hover {
+    background-color: #005bb5;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.calendar {
+    animation: fadeIn 1s ease-in-out;
+}
